@@ -67,7 +67,7 @@ enum ovl_path_type ovl_path_type(struct dentry *dentry)
 
 	if (oe->__upperdentry) {
 		if (oe->lowerdentry) {
-			if (S_ISDIR(dentry->d_inode->i_mode))
+			if (d_is_dir(dentry))
 				return OVL_PATH_MERGE;
 			else
 				return OVL_PATH_UPPER;

@@ -215,7 +215,7 @@ void fixup_lower_ownership(struct dentry *dentry, const char *name)
 	case PERM_ANDROID:
 	case PERM_ANDROID_DATA:
 	case PERM_ANDROID_MEDIA:
-		if (S_ISDIR(dentry->d_inode->i_mode))
+		if (d_is_dir(dentry))
 			gid = multiuser_get_uid(info_d->userid, AID_MEDIA_RW);
 		else
 			gid = multiuser_get_uid(info_d->userid, get_type(name));
