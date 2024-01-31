@@ -1,6 +1,8 @@
 #!/bin/bash
 #设置环境
 
+set -x
+
 KERNEL_PATH=$PWD
 
 SETUP_KERNELSU=true
@@ -18,8 +20,9 @@ fi
 echo " "
 echo "***Setting environment...***"
 # 交叉编译器路径
-export PATH=$PATH:$KERNEL_PATH/aarch64-linux-android-4.9/bin
+export PATH=$PATH:$KERNEL_PATH/gcc-aarch64/bin:$KERNEL_PATH/gcc-arm/bin
 export CROSS_COMPILE=aarch64-linux-android-
+export CROSS_COMPILE_ARM32=arm-linux-androideabi-
 
 export GCC_COLORS=auto
 export ARCH=arm64

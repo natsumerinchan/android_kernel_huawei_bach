@@ -1,0 +1,2 @@
+../arch/arm64/Makefile:41: *** arm-linux-androideabi-gcc not found, check CROSS_COMPILE_ARM32。 停止。
+make: *** [Makefile:149：sub-make] 错误 2
